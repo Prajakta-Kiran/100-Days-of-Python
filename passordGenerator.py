@@ -14,12 +14,11 @@ password_list += random.choices(letters,k=nr_letters)
 password_list += random.choices(symbols,k=nr_symbols)
 password_list += random.choices(numbers,k=nr_numbers)
 print(password_list)
-# password = "".join(password_list) 
-# print("easy way password: " + password)
-        
+
 #2 - Order of charecters randomised
 random.shuffle(password_list)
-shuffled_password = "".join(password_list)
-print("Your password is: "+shuffled_password)  
+password = "".join(password_list)
+
+print("Your password is: "+password)  
 
 print("SO PROUD OF MYSELF RIGHT NOW..YOOOO")
