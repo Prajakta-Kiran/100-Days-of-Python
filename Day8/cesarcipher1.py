@@ -20,7 +20,7 @@ while should_continue:
     message = input("Type your message.\n").lower()
     shift_num = int(input("Type the shift number.\n"))
     cipherText(direction,message,shift_num)
-    restart = input("Type 'yes' to continue and 'no' to discontine\n")
+    restart = input("Type 'yes' to continue and 'no' to discontinue\n")
     if restart == 'no':
         should_continue = False
         print("Thanks for using cypher programe. See you soon!")
