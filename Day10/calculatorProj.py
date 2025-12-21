@@ -13,8 +13,6 @@ def divide(d1, d2):
 operations = {
     "+":add, "-":subtraction, "*":multiply,"/":divide
 }
-def performCalculations(n1, n2, operation):
-    return 
 
 def calculate():
     to_continue = True
