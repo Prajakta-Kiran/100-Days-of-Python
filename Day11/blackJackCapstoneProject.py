@@ -22,7 +22,7 @@ def gameCalculations():
     player_cards = random.choices(cards, k=2)
     computer_cards = random.choices(cards, k=2)
     continue_game = True
-
+    scores = {}
     while continue_game:
         scores = calculate_score(player_cards, computer_cards)
         if scores['p_score'] > 21 and 11 in player_cards:
