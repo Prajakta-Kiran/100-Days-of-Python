@@ -7,54 +7,52 @@ import hlgameData
 
 
 def createNewData(data, gameData):
-    """ Wrote this code under the assumption that option a and be will have always randome value. 
-        value shoud be always different not same"""
+    """ Wrote this code under the assumption that option a and be will have always random value.
+        value should be always different not same"""
     data[0] = random.choice(data)
     data[1] = random.choice(gameData.data)
     gameData.data.remove(data[1])
 
 def play_game():
     print(art.logo)
-    keepGuessing = True
+    keep_guessing = True
     score = 0
 
-    newData = []
-    option_a = {}
-    option_b = {}
- 
+    new_data = []
+
     option_a = random.choice(hlgameData.data)
     hlgameData.data.remove(option_a)
     option_b = random.choice(hlgameData.data)
     hlgameData.data.remove(option_b)
 
-    newData.append(option_a)
-    newData.append(option_b)
+    new_data.append(option_a)
+    new_data.append(option_b)
 
-    while keepGuessing and len(hlgameData.data)!=0:
-        print(f"Compare A: {newData[0]['name']}, {newData[0]['description']} from {newData[0]['country']}")
+    while keep_guessing and len(hlgameData.data)!=0:
+        print(f"Compare A: {new_data[0]['name']}, {new_data[0]['description']} from {new_data[0]['country']}")
         print(art.vs)
-        print(f"Against B: {newData[1]['name']}, {newData[1]['description']} from {newData[1]['country']}")
+        print(f"Against B: {new_data[1]['name']}, {new_data[1]['description']} from {new_data[1]['country']}")
 
         selected_type = input("Who has more followers? Type 'A' or 'B': ")
 
         if selected_type.lower() == 'a' :
-            if newData[0]['follower_count'] > newData[1]['follower_count']:
+            if new_data[0]['follower_count'] > new_data[1]['follower_count']:
                 score +=1
-                createNewData(newData, hlgameData)
+                createNewData(new_data, hlgameData)
                 print(art.logo)
                 print(f"You are right! Current score: {score}")
             else:
-                keepGuessing = False
+                keep_guessing = False
                 print(f"Wrong guess! Final score: {score}")
 
         else:
-            if newData[1]['follower_count'] > newData[0]['follower_count']:
+            if new_data[1]['follower_count'] > new_data[0]['follower_count']:
                 score +=1
-                createNewData(newData, hlgameData)
+                createNewData(new_data, hlgameData)
                 print(art.logo)
                 print(f"You are right! Current score: {score}")
             else:
-                keepGuessing = False
+                keep_guessing = False
                 print(f"Wrong guess! Final score: {score}")
         
 play_game()
